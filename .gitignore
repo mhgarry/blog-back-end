@@ -1,0 +1,20 @@
+node_modules
+.env
+.DS_Store
+.env*
+.env.local
+.env.development.local
+.vscode
+
+dist
+build
+
+node_modules
+.DS_Store
+
+
+# Logs
+logs
+npm-debug.log*
+*.log*
+*.logs

@@ -1,0 +1,42 @@
+{
+    "name": "blog-back-end",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "build-ts": "tsc",
+        "build": "npm run build-ts && npm run lint",
+        "lint": "tsc --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
+        "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+        "serve": "node dist/server.js",
+        "start": "npm run serve",
+        "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+        "watch-ts": "tsc -w",
+        "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\"  \"npm run watch-ts\" \"npm run watch-node\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@types/node": "^22.7.4",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.0",
+        "mysql2": "^3.11.3",
+        "sequelize": "^6.37.3"
+    },
+    "devDependencies": {
+        "@types/concurrently": "^6.4.0",
+        "@types/eslint": "^9.6.1",
+        "@types/express": "^5.0.0",
+        "@types/sequelize": "^4.28.20",
+        "@typescript-eslint/eslint-plugin": "^8.7.0",
+        "@typescript-eslint/parser": "^8.7.0",
+        "concurrently": "^9.0.1",
+        "eslint": "^9.11.1",
+        "eslint-config-prettier": "^9.1.0",
+        "nodemon": "^3.1.1",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.2"
+    }
+}
