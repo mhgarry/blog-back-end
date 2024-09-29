@@ -3,6 +3,7 @@ module.exports = {
     testEnvironment: 'node',
     setupFiles: ['dotenv/config'], // Load environment variables before tests
     moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/src/$1', // If using path aliases from tsconfig.json
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
+    testMatch: ['**/tests/**/*.(test|spec).ts'], // Match all test files
 };
